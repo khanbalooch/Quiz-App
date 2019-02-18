@@ -15,7 +15,15 @@
                 {{p.title}}
               </ion-label>
             </ion-item>
+            
           </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item  class="lato"  [routerDirection]="'root'" (click)="logout()"  class="btm">
+              <ion-icon name="log-in"></ion-icon>
+              <ion-label>Log out</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
         </ion-list>
       </ion-content>
     </ion-menu>

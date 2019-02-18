@@ -5,6 +5,7 @@ import { LoadingController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { AuthenticationService } from '../services/authentication.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -31,14 +32,13 @@ export class LoginPage implements OnInit {
         username: this.loginForm.get('username').value,
         password: this.loginForm.get('password').value
       });
+      console.log(res);
+      this.router.navigate(['/home']);
       this.loadingController.dismiss();
     } catch (error) {
       this.loadingController.dismiss();
-      if (error === 0) {
-        this.presentToast('Invalid username password');
-      } else {
-        this.presentToast('Some Error Occured, Please try again');
-      }
+      console.log(error);
+        this.presentToast(error.message);
     }
   }
 

@@ -5,9 +5,19 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const config = {
+  apiKey: 'AIzaSyCgIFH7TCXnUERoO5gyQhobnzMsh9n3hD4',
+  authDomain: 'stress-buster-26374.firebaseapp.com',
+  databaseURL: 'https://stress-buster-26374.firebaseio.com',
+  projectId: 'stress-buster-26374',
+  storageBucket: 'stress-buster-26374.appspot.com',
+  messagingSenderId: '939502330565'
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +25,9 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
