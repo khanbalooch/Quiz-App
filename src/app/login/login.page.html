@@ -1,0 +1,82 @@
+<ion-content class="main">
+  <div class="AppBg" style="background:url('../../../assets/images/Welcoe.jpg');">
+    <!--logo start here-->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div>
+            <img src="../../../assets/images/scil_logo.jpg" alt="logo">
+            <!--<ion-label class="title">Find Your </ion-label>
+            <ion-label class="title-bold">SCIL</ion-label> -->
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--logo end here-->
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-container">
+        <ion-grid class="no-v-pad">
+          <ion-row class="errors-c">
+
+          </ion-row>
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-item class="uberInput uberPrimary input-c">
+                <ion-label class="icon txt_w">
+                  <ion-icon name="person"></ion-icon>
+                </ion-label>
+                <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='username'
+                  type="text" placeholder="Name" padding></ion-input>
+              </ion-item>
+              <div class="error center" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required && !loginForm.valid">
+                <ion-label color="danger">
+                  Email is required.
+                </ion-label>
+              </div>
+              <div class="error center" *ngIf="(username.dirty || username.touched) && username.invalid  && username.errors.email  && loginForm.invalid">
+                <ion-label color="danger">
+                  Invalid email address.
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-item class="uberInput uberPrimary input-c">
+                <ion-label class="icon txt_w">
+                  <ion-icon name="lock"></ion-icon>
+                </ion-label>
+                <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='password'
+                  type="password" placeholder="Password" padding></ion-input>
+              </ion-item>
+              <div class="error center" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !loginForm.valid">
+                <ion-label color="danger">
+                  Password is required.
+                </ion-label>
+              </div>
+              
+            </ion-col>
+          </ion-row>
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-button class="uberPrimary" type="submit" [disabled]="!loginForm.valid"  size="default"
+                expand="block" fill="solid" color="medium">LOGIN</ion-button>
+            </ion-col>
+          </ion-row>
+          <div class="input-container no-v-pad">
+            <ion-row class="no-v-pad">
+              <ion-col size="6" class="no-v-pad">
+                <ion-item class="uberLink">
+                  <a (click)='onForgotPass()' class="fp-text pointer">
+                    <ion-label class="check-item" color="light">Forgot Password?</ion-label>
+                  </a>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-grid>
+      </div>
+    </form>
+  </div>
+</ion-content>
