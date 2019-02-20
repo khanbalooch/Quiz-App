@@ -11,17 +11,26 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
+    <ion-card *ngFor="let quiz of quizzes">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-card-title>{{quiz.title}}</ion-card-title>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+                <ion-card-subtitle>Total Marks: {{quiz.marks}}</ion-card-subtitle>
+            </ion-col>
+            <ion-col size="6">
+                <ion-card-subtitle>Questions: {{quiz.questionCount}}</ion-card-subtitle>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-card-content>{{quiz.description}}</ion-card-content>
+          </ion-row>
+          <ion-button (click)="openQuizDetails(quiz)" expand="block">Attempt Quiz</ion-button>
+        </ion-grid>
+      </ion-card-header>
+    </ion-card>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
 </ion-content>

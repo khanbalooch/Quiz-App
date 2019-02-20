@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Trivia</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding class="home">
+    <ion-grid *ngIf="quiz">
+      <ion-row>
+        <ion-col width-50 offset-25>
+          <h2 class="question">{{quiz.questions[{{questionIndex}}}}</h2>
+          
+          <!---<ion-list>
+            <ion-item class="answers" *ngFor="let answer of quiz.quanswers" (click)="handleAnswer(answer)">
+                {{answer}}
+            </ion-item>
+          </ion-list>-->
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

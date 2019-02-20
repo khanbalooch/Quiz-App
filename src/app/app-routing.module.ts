@@ -14,7 +14,9 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  },  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  },  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'start-quiz', loadChildren: './start-quiz/start-quiz.module#StartQuizPageModule' },
+  { path: 'question', loadChildren: './question/question.module#QuestionPageModule' }
 
 ];
 

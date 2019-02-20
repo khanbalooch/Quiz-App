@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
+import { IonicStorageModule, Storage } from '@ionic/storage';
 const config = {
   apiKey: 'AIzaSyCgIFH7TCXnUERoO5gyQhobnzMsh9n3hD4',
   authDomain: 'stress-buster-26374.firebaseapp.com',
@@ -25,6 +25,7 @@ const config = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule

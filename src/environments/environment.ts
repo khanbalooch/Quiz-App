@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  user: 'user'
+  user: 'user',
+  quiz: 'quiz'
 };
 
 /*
