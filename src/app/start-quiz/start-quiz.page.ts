@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment.prod';
 export class StartQuizPage implements OnInit {
 
   quiz: any;
-  constructor(private storage: Storage) {}
+  constructor(private storage: Storage) {
+  }
 
   async ngOnInit() {
     this.quiz = await this.storage.get(environment.quiz);

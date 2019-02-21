@@ -1,20 +1,20 @@
 <ion-header>
-    <ion-navbar>
+    <ion-toolbar>
       <ion-title>Trivia</ion-title>
-    </ion-navbar>
+    </ion-toolbar>
   </ion-header>
   
   <ion-content padding class="home">
-    <ion-grid *ngIf="quiz">
+    <ion-grid *ngIf="currentQuestion">
       <ion-row>
         <ion-col width-50 offset-25>
-          <h2 class="question">{{quiz.questions[{{questionIndex}}}}</h2>
+          <h2 class="question">{{currentQuestion.question}}</h2>
           
-          <!---<ion-list>
-            <ion-item class="answers" *ngFor="let answer of quiz.quanswers" (click)="handleAnswer(answer)">
+          <ion-list>
+            <ion-item class="answers" *ngFor="let answer of currentQuestion.answers" (click)="handleAnswer(answer)">
                 {{answer}}
             </ion-item>
-          </ion-list>-->
+          </ion-list>
           
         </ion-col>
       </ion-row>
