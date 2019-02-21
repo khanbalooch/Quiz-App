@@ -11,11 +11,11 @@
           <h2 class="question">{{currentQuestion.question}}</h2>
           
           <ion-list>
-            <ion-item class="answers" *ngFor="let answer of currentQuestion.answers" (click)="handleAnswer(answer)">
+            <ion-item class="answers" *ngFor="let answer of currentQuestion.answers">
                 {{answer}}
             </ion-item>
           </ion-list>
-          
+          <button ion-button >Submit</button>
         </ion-col>
       </ion-row>
     </ion-grid>
