@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { environment } from 'src/environments/environment';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-question',
@@ -12,6 +13,9 @@ export class QuestionPage implements OnInit {
   quiz: any;
   questionIndex = 0;
   currentQuestion = null;
+  answerForm = new FormGroup({
+    answer : new FormControl('', Validators.required)
+  });
   constructor(private storage: Storage) { }
 
   async ngOnInit() {
